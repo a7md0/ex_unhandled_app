@@ -33,6 +33,10 @@ class _MyHomePageState extends State<MyHomePage> {
   int? _statusCode;
 
   Future<void> _incrementCounter() async {
+    setState(() {
+      _statusCode = null;
+    });
+
     try {
       var httpClient = Dio()..options.contentType = "application/json";
 
@@ -48,9 +52,9 @@ class _MyHomePageState extends State<MyHomePage> {
         _statusCode = dioError.response?.statusCode;
       });
 
-      print(dioError.message);
+      print("DioError catch: ${dioError.message}");
     } catch (e) {
-      print(e.toString());
+      print("Other exception catch: ${e.toString()}");
     }
   }
 
