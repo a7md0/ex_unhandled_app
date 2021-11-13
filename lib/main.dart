@@ -32,7 +32,7 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   int? _statusCode;
 
-  Future<void> _incrementCounter() async {
+  Future<void> _callApi() async {
     setState(() {
       _statusCode = null;
     });
@@ -79,7 +79,7 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
+        onPressed: _callApi,
         tooltip: 'Increment',
         child: const Icon(Icons.api),
       ),
